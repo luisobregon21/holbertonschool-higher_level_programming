@@ -3,12 +3,13 @@ from sys import argv
 from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
     leng = len(argv)
-    a = int(argv[1])
-    b = int(argv[3])
-    operator = argv[2]
     if leng != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
+
+    a = int(argv[1])
+    b = int(argv[3])
+    operator = argv[2]
 
     if operator == "+":
         total = add(a, b)
