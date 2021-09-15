@@ -1,1 +1,1 @@
-#The directory holds basic python projects.
+# The directory holds basic python projects.
