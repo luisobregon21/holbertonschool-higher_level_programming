@@ -17,8 +17,8 @@ class Square:
         Args:
             size: is none if no size is passed
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def position(self):
