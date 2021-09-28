@@ -35,6 +35,7 @@ class Square:
                 self.__position = value
         else:
             raise TypeError("position must be a tuple of 2 positive integers")
+
     @property
     def size(self):
         """ function to get value of __size """
