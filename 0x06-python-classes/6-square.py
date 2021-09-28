@@ -56,10 +56,12 @@ class Square:
         """ function prints in stdout the square with the # """
         if self.__size == 0:
             print()
+        for newline in range(self.__position[1]):
+            print()
+
         for i in range(self.__size):
-            if (self.__position[1] <= 0):
-                for space in range(self.__position[0]):
-                    print(" ", end="")
+            for space in range(self.__position[0]):
+                print(" ", end="")
             for j in range(self.__size):
                 print("#", end="")
             print()
