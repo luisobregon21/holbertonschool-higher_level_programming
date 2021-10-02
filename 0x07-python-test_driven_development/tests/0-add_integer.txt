@@ -1,3 +1,126 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/0-add_integer.txt
+# python3 -m doctest -v ./tests/0-add_integer.txt | tail -2
+
+======================================
+''' Importing add_integer function''''
+======================================
 >>> add_integer = __import__('0-add_integer').add_integer
 
+==============
+SUCCESS CASES
+==============
 
+Numbers
+=======
+
+Test 1: Normal Addition
+  ''' Expecting: 17 '''
+>>> add_integer(7, 10)
+17
+
+Test 2: Negative addition
+  ''' Expecting: 3 '''
+>>> add_integer(-7, 10)
+3
+
+Test 3: Two Negative Numbers
+  ''' Expecting: -16 '''
+>>> add_integer(-7, -9)
+-16
+
+Test 4: One Float
+  ''' Expecting: 7 '''
+>>> add_integer(4, 3.5)
+7
+
+Test 5: Two Floats
+  ''' Expecting: 8.2, but we expect whole numbers '''
+>>> add_integer(4.5, 4.7)
+8
+
+Test 6: One Negative Float
+  ''' Expecting: 2 '''
+>>> add_integer(5, -3.5)
+2
+
+Test 7: Two negative Floats
+  ''' Expecting: -7 '''
+>>> add_integer(-4.7, -3.5)
+-7
+
+Test 8: One arguement passed
+  ''' Expecting: 119 '''
+>>> add_integer(21)
+119
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+ERRORS
+=======
+
+Test 9: No arguements passed
+  ''' Expecting: Missing arguement '''
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 10: Invalid Syntax
+  ''' Expecting: -7e will be an invalid Syntax '''
+>>> add_integer(-7e, 10)
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
+
+NonNumbers
+==========
+
+Test 11: NameError
+  ''' Expecting: NameError, that has no value'''
+>>> add_integer(a, 10)
+Traceback (most recent call last):
+  ...
+NameError: name 'a' is not defined
+
+Test 12: TypeError
+  ''' Expecting: TypeError .. a must be an integer "
+>>> add_integer("pepe", 7)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 13: TypeError
+  ''' Expecting: TypeError .. b must be an integer '''
+>>> add_integer(7, "error")
+Traceback (most recent call last):
+  ...
+TypeError: b must be an integer
+
+Test 14: TypeError
+  ''' Expecting: TypeError ... a must be an integer '''
+>>> add_integer("5", 5)
+Traceback (most recent call last):
+  ...
+TypeError: a must be an integer
+
+Test 15: Value Error
+  ''' Expecting: Float Value Error '''
+>>> add_integer(float("hola"), 7)
+Traceback (most recent call last):
+  ...
+ValueError: could not convert string to float: 'hola'
+
+Test 16: Overflow Error
+  ''' Expecting: overflow error '''
+>>> add_integer(429298302e34433224241011321234, 78286920221)
+Traceback (most recent call last):
+  ...
+OverflowError: cannot convert float infinity to integer
