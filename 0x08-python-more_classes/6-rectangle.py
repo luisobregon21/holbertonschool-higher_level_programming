@@ -12,7 +12,7 @@ class Rectangle:
         ''' init initializes y prende the first instance of the class. '''
         self.height = height
         self.width = width
-        type(self).number_of_instances += 1;
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -70,7 +70,7 @@ class Rectangle:
     def __repr__(self):
         ''' representation of object '''
         string = "Rectangle"
-        string  += "(" + str(self.__width) + "," + str(self.__height) + ")"
+        string += "(" + str(self.__width) + ", " + str(self.__height) + ")"
         return string
 
     def __del__(self):
