@@ -12,7 +12,8 @@ class Rectangle:
         ''' init initializes y prende the first instance of the class. '''
         self.height = height
         self.width = width
-        type(self).number_of_instances += 1;
+        type(self).print_symbol = "#"
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -63,14 +64,14 @@ class Rectangle:
         else:
             for row in range(self.__height):
                 for column in range(self.__width):
-                    string += "#"
+                    string += str(self.print_symbol)
                 string += "\n"
             return string[:-1]
 
     def __repr__(self):
         ''' representation of object '''
         string = "Rectangle"
-        string  += "(" + str(self.__width) + "," + str(self.__height) + ")"
+        string += "(" + str(self.__width) + "," + str(self.__height) + ")"
         return string
 
     def __del__(self):
