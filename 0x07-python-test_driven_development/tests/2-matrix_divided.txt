@@ -1,0 +1,109 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/2-matrix_divided.txt
+# python3 -m doctest -v ./tests/2-matrix_divided.txt | tail -2
+
+==========================================
+''' Importing MATRIX_DIVISION function''''
+==========================================
+>>> matrix = __import__('2-matrix_divided').matrix_divided
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: Regular Division
+  ''' Expecting: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]] '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test 2: Division with floats
+  '''Expecting:[[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]] '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], 2.5)
+[[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
+
+Test 3: Dividing with Negative
+  ''' Expecting: [[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]] '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], -2)
+[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+
+Test 4: Float in list
+  '''Expecting: [[0.75, 1.4, 1.65], [2.1, 2.75, 3.3]] '''
+>>> matrix([[1.5, 2.8, 3.3], [4.2, 5.5, 6.6]], 2)
+[[0.75, 1.4, 1.65], [2.1, 2.75, 3.3]]
+
+Test 5: Divide by big number
+  ''' Expecting: [0.0, 0.0, 0.0], [0.0, 0.0, 0.0] '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], 8362021)
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+======
+ERRORS
+======
+Test 6: Division by 0
+  ''' Expecting: ZeroDivision error '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+  ...
+ZeroDivisionError: division by zero
+
+Test 7: Division by non-number
+  ''' Expecting: TypeError '''
+>>> matrix([[1, 2, 3], [4, 5, 6]], "hey")
+Traceback (most recent call last):
+  ...
+TypeError: div must be a number
+
+Test 8: Matrix not a list
+  ''' Expecting: TypeError '''
+>>> matrix((1, 3), 7)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 9: Element has a non-number
+  ''' Expecting: TypeError '''
+>>> matrix([[1, "hi", 3], [4, 5, 6]], 6)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 10: Different size rows
+  ''' Expecting: TypeError '''
+>>> matrix([[1, 2, 3, 7, 9], [4, 5, 6]], 2)
+Traceback (most recent call last):
+  ...
+TypeError: Each row of the matrix must have the same size
+
+Test 11: One list passed
+  ''' Expecting: TypeError '''
+>>> matrix([[1, 2, 3], "hi"], 2)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 12: Empty Matrix
+  ''' Expecting: Syntax error '''
+>>> matrix( , 2)
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
+
+Test 13: Missing both parameters
+  ''' Expecting: TypeError '''
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

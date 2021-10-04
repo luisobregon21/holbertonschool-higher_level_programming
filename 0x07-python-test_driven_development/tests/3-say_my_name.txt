@@ -1,0 +1,79 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/3-say_my_name.txt
+# python3 -m doctest -v ./tests/3-say_my_name.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> my_name = __import__('3-say_my_name').say_my_name
+
+==============
+SUCCESS CASES
+==============
+
+Category 1
+==========
+
+Test 1: A full name
+  ''' Expecting: "... Luisito Obregon" '''
+>>> my_name("Luisito", "Obregon")
+My name is Luisito Obregon
+
+
+Test 2: Only first name
+  ''' Expecting: "... Luisito " '''
+>>> my_name("Luisito")
+My name is Luisito 
+
+
+Test 3: empty strings
+  ''' Expecting: My name is  "
+>>> my_name("","")
+My name is  
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+======
+ERRORS
+======
+
+Test 4: Only last name
+  ''' Expecting: "...Syntax error " '''
+>>> my_name(,"Mogollon")
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
+
+Test 5: Not a string
+  ''' first_name must be a string '''
+>>> my_name(12, "")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 6: Last name Not a string
+  ''' last_name must be a string '''
+>>> my_name("Luis", 7)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
+
+Test 7: Not a string
+  ''' first_name must be a string '''
+>>> my_name(12, "")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+Test 8: Empty parameters
+  ''' Expecting: TypeError '''
+>>> my_name()
+Traceback (most recent call last):
+  ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'

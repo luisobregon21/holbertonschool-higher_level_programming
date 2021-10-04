@@ -1,0 +1,87 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/4-print_square.txt.txt
+# python3 -m doctest -v ./tests/4-print_square.txt | tail -2
+
+==========================================
+''' Importing MATRIX_DIVISION function''''
+==========================================
+>>> print_sqr = __import__('4-print_square').print_square
+
+==============
+SUCCESS CASES
+==============
+
+
+Category 1
+==========
+
+Test 1: Regular square
+  ''' Expecting: ##\n##'''
+>>> print_sqr(2)
+##
+##
+
+Test 2: Zero square
+  ''' Expecting: '''
+>>> print_sqr(0)
+
+Test 3: 1 square
+  '''' Expecting: # '''
+>>> print_sqr(1)
+#
+
+Test 4: 10 square
+  ''' Expecting: 100 #'s '''
+>>> print_sqr(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+==========================
+CASES THAT SHOULD NOT WORK
+==========================
+
+======
+ERRORS
+======
+
+Test 5: Negative size
+  '''Expecting: ...size must be >=0 '''
+>>> print_sqr(-3)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+Test 6: TypeError
+  ''' Expecting: ... size must be an integer '''
+>>> print_sqr(2.4)
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+Test 7: No size
+  ''' Expecting: TypeError.. '''
+>>> print_sqr()
+Traceback (most recent call last):
+  ....
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Test 8: string TypeError
+  ''' Expecting: ... size must be an integer '''
+>>> print_sqr("hey")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
