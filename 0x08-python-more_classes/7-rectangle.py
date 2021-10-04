@@ -7,12 +7,13 @@ class Rectangle:
     __width = None
     __height = None
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         ''' init initializes y prende the first instance of the class. '''
         self.height = height
         self.width = width
-        type(self).print_symbol = "#"
+        type(self).print_symbol = self.print_symbol
         type(self).number_of_instances += 1
 
     @property
