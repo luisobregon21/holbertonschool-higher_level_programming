@@ -59,11 +59,11 @@ class Rectangle:
     def __str__(self):
         ''' saves element in string '''
         string = ""
-        if self.height == 0 or self.width == 0:
+        if self.__height == 0 or self.__width == 0:
             return string
         else:
-            for row in range(self.height):
-                for column in range(self.width):
+            for row in range(self.__height):
+                for column in range(self.__width):
                     string += str(self.print_symbol)
                 string += "\n"
             return string[:-1]
