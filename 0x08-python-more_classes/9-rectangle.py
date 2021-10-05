@@ -10,8 +10,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         ''' init initializes y prende the first instance of the class. '''
-        self.height = height
         self.width = width
+        self.height = height
         type(self).print_symbol = "#"
         Rectangle.number_of_instances += 1
 
@@ -51,7 +51,7 @@ class Rectangle:
 
     def perimeter(self):
         ''' returns perimeter of a rectangle '''
-        if self.height == 0 or self.width == 0:
+        if self.__height == 0 or self.__width == 0:
             return 0
         else:
             return (self.__height * 2) + (self.__width * 2)
@@ -93,9 +93,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        '''returns a new Rectangle instance where width/heigth == size'''
-        if not type(size) is int:
-            raise TypeError("width must be integer")
-        if size < 0:
-            raise ValueError("width must be >= 0")
+        ''' returns new rectangle '''
         return cls(size, size)
