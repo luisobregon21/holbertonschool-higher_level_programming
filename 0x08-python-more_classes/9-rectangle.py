@@ -47,14 +47,14 @@ class Rectangle:
 
     def area(self):
         ''' returns the area '''
-        return self.height * self.width
+        return self.__height * self.__width
 
     def perimeter(self):
         ''' returns perimeter of a rectangle '''
         if self.height == 0 or self.width == 0:
             return 0
         else:
-            return (self.height * 2) + (self.width * 2)
+            return (self.__height * 2) + (self.__width * 2)
 
     def __str__(self):
         ''' saves element in string '''
