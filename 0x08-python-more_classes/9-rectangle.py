@@ -47,11 +47,11 @@ class Rectangle:
 
     def area(self):
         ''' returns the area '''
-        return self.__height * self.__width
+        return self.height * self.width
 
     def perimeter(self):
         ''' returns perimeter of a rectangle '''
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return 0
         else:
             return (self.__height * 2) + (self.width * 2)
@@ -59,7 +59,7 @@ class Rectangle:
     def __str__(self):
         ''' saves element in string '''
         string = ""
-        if self.__height == 0 or self.__width == 0:
+        if self.height == 0 or self.width == 0:
             return string
         else:
             for row in range(self.__height):
@@ -86,9 +86,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) != Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() == rect_2.area():
-            return rect_1
-        elif rect_1.area() > rect_2.area():
+        if rect_1.area() <= rect_2.area():
             return rect_1
         else:
             return rect_2
