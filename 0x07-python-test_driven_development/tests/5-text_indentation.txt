@@ -4,45 +4,76 @@
 ''' TESTTING WITH the following... '''
 
 ''' Does the same as test below, but gives more details '''
-# python3 -m doctest -v ./tests/file_name.txt
-# python3 -m doctest -v ./tests/file_name.txt | tail -2
+# python3 -m doctest -v ./tests/5-text_indentation.txt
+# python3 -m doctest -v ./tests/5-text_indentation.txt | tail -2
 
 ======================================
 ''' Importing TEMPLATE function''''
 ======================================
->>> holder = __import__('module').function_being_tested
+>>> text = __import__('5-text_indentation').text_indentation
 
 ==============
 SUCCESS CASES
 ==============
 
+========
+SUCCESS
+========
 
-Category 1
-==========
+Test 1: Normal Text
+  ''' Expecting: Hello bob '''
+>>> text("Hello bob")
+Hello bob
 
-Test 1: Normal Addition
-  ''' Expecting: expected output '''
->>> Name_of_function(parameters)
-the_output
+Test 2: Empty string
+  ''' Expecting: '''
+>>> text("")
+
+
+Test 3: with "."
+  ''' Expecting: hey.
+                 <BLANKLINE>
+                 bob
+  '''
+>>> text("hey. bob")
+hey.
+<BLANKLINE>
+bob
+
+Test 4: with "." and "?"
+  ''' Expecting: hi.
+                 <BLANKLINE>
+                 ?
+                 <BLANKLINE>
+  '''
+>>> text("hi.?")
+hi.
+<BLANKLINE>
+?
+<BLANKLINE>
+
+Test 5: start with spaces
+  ''' Expecting:hi '''
+>>> text(" hi")
+hi
 
 
 ==========================
 CASES THAT SHOULD NOT WORK
 ==========================
 
-Category 2
-==========
-
-Test 2: Test Name
-  ''' comment '''
->>> Name_of_function(parameters)
-Traceback (comment)
+Test 6: not a string
+  ''' Expected: TypeError '''
+>>> text(7)
+Traceback (most recent call last):
   ...
-TypeError: Error message
+TypeError: text must be a string
 
 
-
-Category 3
-=========
-
+Test 7:No parameters
+  ''' Expected: TypeError '''
+>>> text()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
 
