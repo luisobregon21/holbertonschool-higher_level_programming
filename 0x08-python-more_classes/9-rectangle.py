@@ -54,7 +54,7 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return 0
         else:
-            return (self.__height * 2) + (self.width * 2)
+            return (self.height * 2) + (self.width * 2)
 
     def __str__(self):
         ''' saves element in string '''
@@ -62,8 +62,8 @@ class Rectangle:
         if self.height == 0 or self.width == 0:
             return string
         else:
-            for row in range(self.__height):
-                for column in range(self.__width):
+            for row in range(self.height):
+                for column in range(self.width):
                     string += str(self.print_symbol)
                 string += "\n"
             return string[:-1]
@@ -71,7 +71,7 @@ class Rectangle:
     def __repr__(self):
         ''' representation of object '''
         string = "Rectangle"
-        string += "(" + str(self.__width) + "," + str(self.__height) + ")"
+        string += "(" + str(self.width) + "," + str(self.height) + ")"
         return string
 
     def __del__(self):
