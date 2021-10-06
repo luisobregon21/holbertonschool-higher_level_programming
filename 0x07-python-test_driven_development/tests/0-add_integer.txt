@@ -124,3 +124,9 @@ Test 16: Overflow Error
 Traceback (most recent call last):
   ...
 OverflowError: cannot convert float infinity to integer
+
+Test 17: NaN float
+  ''' cannot convert float NaN to int '''
+Traceback (most recent call last):
+  ...
+ValueError: cannot convert float NaN to integer
