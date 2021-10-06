@@ -19,6 +19,9 @@ SUCCESS CASES
 
 Category 1
 ==========
+Test: EmptyList
+>>> matrix([[]], 3)
+[[]]
 
 Test 1: Regular Division
   ''' Expecting: [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]] '''
