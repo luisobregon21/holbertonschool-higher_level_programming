@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' Module has text indentation function '''
 
+
 def text_indentation(text):
     ''' prints a text with 2 new lines after: ., ?, :
 
