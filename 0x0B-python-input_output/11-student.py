@@ -22,7 +22,7 @@ class Student:
                 dic[key] = self.__dict__[key]
         return dic
 
-def reload_from_json(self, json):
-    ''' replaces all attributes of the Student instance '''
-    for key, v in json.items():
-        setattr(self, key, v)
+    def reload_from_json(self, json):
+        ''' replaces all attributes of the Student instance '''
+        for key, v in json.items():
+            setattr(self, key, v)
