@@ -1,0 +1,28 @@
+============================================
+''' This is the Start of Unit Testing... '''
+============================================
+''' TESTTING WITH the following... '''
+
+''' Does the same as test below, but gives more details '''
+# python3 -m doctest -v ./tests/7-base_geometry.txt
+# python3 -m doctest -v ./tests/7-base_geometry.txt | tail -2
+
+======================================
+''' Importing TEMPLATE function''''
+======================================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Test 1:
+>>> Base = BaseGeometry()
+>>> Base.integer_validator("name", 7)
+
+===========
+EXCEPTIONS
+===========
+
+
+Test 1:
+>>> Base = BaseGeometry()
+
+
