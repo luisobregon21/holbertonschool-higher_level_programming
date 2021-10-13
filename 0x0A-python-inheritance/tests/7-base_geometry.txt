@@ -100,3 +100,11 @@ Test 10:
 Traceback (most recent call last):
 	...
 TypeError: name must be an integer
+
+Test 5:
+>>> Base = BaseGeometry()
+>>> Base.integer_validator("name", False)
+Traceback (most recent call last):
+	...
+TypeError: name must be an integer
+
