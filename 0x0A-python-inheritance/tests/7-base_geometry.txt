@@ -24,5 +24,9 @@ EXCEPTIONS
 
 Test 1:
 >>> Base = BaseGeometry()
+>>> Base.area()
+Traceback (most recent call last):
+	...
+Exception: area() is not implemented
 
 
