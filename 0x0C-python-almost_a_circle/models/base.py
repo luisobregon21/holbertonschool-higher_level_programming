@@ -32,3 +32,49 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        ''' writes the JSON string representation of list_objs to a file'''
+        with open(cls.__name__ + '.json', 'w', encoding='utf-8') as file:
+            if list_objs is None:
+                file.write("[]")
+            else:
+                li = []
+                for obj in list_objs:
+                    li.append(obj.to_dictionary())
+                file.write(Base.to_json_string(li))
+
+    @staticmethod
+    def from_json_string(json_string):
+        ''' returns the list of the JSON string representation json_string '''
+        if json_string is None or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        '''  that returns an instance with all attributes already set '''
+        if cls.__name__ == "Rectangle":
+            rec_dummy = cls(1, 1)
+            rec_dummy.update(**dictionary)
+            return rec_dummy
+
+        if cls.__name__ == "Square":
+            sqr_dummy = cls(1)
+            sqr_dummy.update(**dictionary)
+            return sqr_dummy
+
+    @classmethod
+    def load_from_file(cls):
+        ''' that returns a list of instances '''
+        obj_li = []
+        try:
+            with open(cls.__name__ + ".json", encoding="utf-8") as f:
+                dict_li = Base.from_json_string(f.read())
+                for di in dict_li:
+                    obj_li.append(cls.create(**di))
+                return obj_li
+        except IOError:
+            return []
