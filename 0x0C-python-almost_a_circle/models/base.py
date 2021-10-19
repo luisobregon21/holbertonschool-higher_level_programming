@@ -3,6 +3,7 @@
 
 
 import json
+import csv
 
 
 class Base:
@@ -78,3 +79,23 @@ class Base:
                 return obj_li
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        ''' seializes in CSV '''
+             with open(cls.__name__ + ".csv", mode="w") as f:
+            if list_objs is not None:
+                attrs = ['id', 'width', 'height', 'size', 'x', 'y']
+   '''  @classmethod
+    def load_from_file_csv(cls):
+        '''  deserializes in CSV '''
+        obj_li = []
+        try:
+            with open(cls.__name__ + ".", encoding="utf-8") as f:
+                dict_li = Base.from_json_string(f.read())
+                for di in dict_li:
+                    obj_li.append(cls.create(**di))
+                return obj_li
+        except IOError:
+            return []
+    '''
