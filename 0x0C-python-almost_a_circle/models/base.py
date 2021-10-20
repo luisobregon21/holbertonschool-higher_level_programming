@@ -100,3 +100,18 @@ class Base:
                 for dic in li:
                     ''' writing the rows'''
                     writer.writerow(dic)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        ''' deserializes in CSV '''
+        obj_li = []
+        try:
+            with open(cls.__name__ + ".csv", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                for di in reader:
+                    for val in di:
+                        di[val] = int(di[val])
+                    obj_li.append(cls.create(**di))
+                return obj_li
+        except IOError:
+            return []
