@@ -83,19 +83,20 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         ''' seializes in CSV '''
-             with open(cls.__name__ + ".csv", mode="w") as f:
-            if list_objs is not None:
-                attrs = ['id', 'width', 'height', 'size', 'x', 'y']
-   '''  @classmethod
-    def load_from_file_csv(cls):
-        '''  deserializes in CSV '''
-        obj_li = []
-        try:
-            with open(cls.__name__ + ".", encoding="utf-8") as f:
-                dict_li = Base.from_json_string(f.read())
-                for di in dict_li:
-                    obj_li.append(cls.create(**di))
-                return obj_li
-        except IOError:
-            return []
-    '''
+        with open(cls.__name__ + ".csv", mode="w") as f:
+            if list_objs is None:
+                f.write("[]")
+            else:
+                li = []
+                for obj in list_objs:
+                    li.append(obj.to_dictionary())
+                if cls.__name__ == "Rectangle":
+                    attr = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == "Square":
+                    attr = ['id', 'size', 'x', 'y']
+                writer = csv.DictWriter(f, fieldnames=attr)
+                ''' writing the headers '''
+                writer.writeheader()
+                for dic in li:
+                    ''' writing the rows'''
+                    writer.writerow(dic)
