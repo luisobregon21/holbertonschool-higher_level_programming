@@ -8,7 +8,8 @@
 class Square extends require('./4-rectangle') {
   constructor (size) {
     // super is used to access and call functions on an object's parent
-    super(size, size);
+	  super(size);
+	  this.size = size;
   }
 
   charPrint (c) {
@@ -17,9 +18,9 @@ class Square extends require('./4-rectangle') {
       c = 'X';
     }
 
-    while (size < this.height) {
+    while (size < this.size) {
       // repeat returns a string that has been repeated x num of times
-      console.log(c.repeat(this.width));
+      console.log(c.repeat(this.size));
       size++;
     }
   }
