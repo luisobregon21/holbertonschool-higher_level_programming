@@ -15,7 +15,7 @@ class Square:
         Args:
             size: is none if no size is passed
         """
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
