@@ -5,11 +5,11 @@
 */
 
 exports.converter = function (base) {
-   return function (MyConvert) {
-     /*
+  return function (MyConvert) {
+    /*
       toString method accepts an argumentof the
       base used to convert a number into a string.
       */
     return MyConvert.toString(base);
-   };
+  };
 };
