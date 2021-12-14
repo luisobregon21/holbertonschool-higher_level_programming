@@ -19,7 +19,7 @@ class Rectangle {
     let x = 0;
 
     for (x = 0; x < this.height; x++) {
-      // repeat returns a strunf that has been repeated x num of times
+      // repeat returns a string that has been repeated x num of times
       console.log('X'.repeat(this.width));
     }
   }
