@@ -5,7 +5,7 @@
  The extends keyword is used to create a child of another class
  Require is similar to import from python
  */
-class Square extends require('./4-rectangle') {
+class Square extends require('./5-square') {
   constructor (size) {
     // super is used to access and call functions on an object's parent
     super(size);
