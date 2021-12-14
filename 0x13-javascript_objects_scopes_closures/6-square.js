@@ -8,8 +8,8 @@
 class Square extends require('./4-rectangle') {
   constructor (size) {
     // super is used to access and call functions on an object's parent
-	  super(size);
-	  this.size = size;
+    super(size);
+    this.size = size;
   }
 
   charPrint (c) {
