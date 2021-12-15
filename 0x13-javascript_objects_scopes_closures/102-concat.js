@@ -1,6 +1,4 @@
 #!/usr/bin/node
-// that concats 2 files.
-
 const fileA = process.argv[2];
 const fileB = process.argv[3];
 const fileC = process.argv[4];
