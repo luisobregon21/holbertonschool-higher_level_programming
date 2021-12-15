@@ -1,10 +1,13 @@
 #!/usr/bin/node
-// that concats 2 files.
+// script concats 2 files.
 
-const fileA = process.argv[2];
-const fileB = process.argv[3];
-const fileC = process.argv[4];
 const fs = require('fs');
-const txtA = fs.readFileSync(fileA);
-const txtB = fs.readFileSync(fileB);
-fs.writeFileSync(fileC, txtA + txtB);
+const files = process.argv.slice(2);
+
+try {
+  const content = fs.readFileSync(files[0]) +
+    fs.readFileSync(files[1]);
+  fs.writeFileSync(files[2], content);
+} catch {
+  console.log('Failed to concatenate the Files');
+}
