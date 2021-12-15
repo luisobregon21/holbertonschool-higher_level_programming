@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//Computes a dictionary of user ids by occurrence.
+// Computes a dictionary of user ids by occurrence.
 
 // rquire() is a built-in function with a special purpose: to load modules.
 const dict = require('./101-data').dict;
