@@ -17,9 +17,10 @@ if __name__ == '__main__':
                                  user=user, passwd=password,
                                  db=db_name)
     cursor = connection.cursor()
+    # Binary is case sensative
     cursor.execute('''
                    SELECT * FROM states
-                   WHERE name='{}'
+                   WHERE Binary name='{}'
                    ORDER BY id
                    '''.format(state_search))
     # fetches all rows of a query result set and returns as tuple
