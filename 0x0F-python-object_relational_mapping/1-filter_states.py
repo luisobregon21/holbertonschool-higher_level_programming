@@ -20,6 +20,7 @@ if __name__ == '__main__':
     # fetches all rows of a query result set and returns as tuple
     q_rows = cursor.fetchall()
     for row in q_rows:
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
     cursor.close()
     connection.close()
