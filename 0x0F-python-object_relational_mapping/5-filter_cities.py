@@ -28,6 +28,6 @@ if __name__ == '__main__':
     # fetches all rows of a query result set and returns as tuple
     q_rows = cursor.fetchall()
     li = [row[0] for row in q_rows]
-    print(','.join(li))
+    print(', '.join(li))
     cursor.close()
     connection.close()
