@@ -23,5 +23,6 @@ if __name__ == "__main__":
     session.add(Louisiana)
     # saves into the data base
     session.commit()
+    print(Louisiana.id)
 
     session.close()
