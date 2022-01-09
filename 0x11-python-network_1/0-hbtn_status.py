@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 ''' script fetches https://intranet.hbtn.io/status '''
-
 # for opening and reading URLs
 import urllib.request
 
