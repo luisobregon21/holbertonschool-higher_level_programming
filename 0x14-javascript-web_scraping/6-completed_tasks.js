@@ -12,16 +12,15 @@ if (process.argv.length >= 3) {
       const dic = {};
       let count = 0;
       for (const key in content) {
-        const u_id = content[key].userId;
-        const test = key + 1;
-        if (u_id in dic) {
+        const uId = content[key].userId;
+        if (uId in dic) {
           if (content[key].completed === true) {
             count++;
           }
         } else {
           count = 0;
         }
-        dic[u_id] = count;
+        dic[uId] = count;
       }
       console.log(dic);
     }
