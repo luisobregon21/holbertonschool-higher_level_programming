@@ -4,7 +4,6 @@ const process = require('process');
 const request = require('request');
 
 if (process.argv.length >= 3) {
-  const id = 'https://swapi-api.hbtn.io/api/people/18/';
   const url = process.argv[2];
   request.get(url, function (error, response, body) {
     if (error) {
@@ -16,7 +15,7 @@ if (process.argv.length >= 3) {
       for (const i in all) {
         const list = all[i].characters;
         for (const person in list) {
-          if (list[person] === id) {
+          if (list[person].includes('18')) {
             count++;
           }
         }
