@@ -5,7 +5,10 @@ const request = require('request');
 
 if (process.argv.length >= 3) {
   const url = process.argv[2];
-	request.get(url, function(response) {
+	request.get(url, function(error, response) {
+		if (error){
+			console.error('error:', error);
+		}
 		else{
 			console.log(`code: ${response.statusCode}`);
 		}
