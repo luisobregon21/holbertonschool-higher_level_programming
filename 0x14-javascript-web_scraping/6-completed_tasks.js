@@ -10,17 +10,14 @@ if (process.argv.length >= 3) {
     } else {
       const content = JSON.parse(body);
       const dic = {};
-      let count = 0;
       for (const key in content) {
         const uId = content[key].userId;
-        if (uId in dic) {
-          if (content[key].completed === true) {
-            count++;
-          }
-        } else {
-          count = 0;
+        if (!dic[uId]) {
+          dic[uId] = 0;
         }
-        dic[uId] = count;
+        if (content[key].completed) {
+          dic[uId] += 1;
+        }
       }
       console.log(dic);
     }
