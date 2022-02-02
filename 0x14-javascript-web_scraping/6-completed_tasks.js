@@ -19,7 +19,13 @@ if (process.argv.length >= 3) {
           dic[uId] += 1;
         }
       }
-      console.log(dic);
+      const goatdic = {};
+      Object.keys(dic).forEach((key) => {
+        if (dic[key] > 0) {
+          goatdic[key] = dic[key];
+        }
+      });
+      console.log(goatdic);
     }
   });
 }
