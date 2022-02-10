@@ -1,3 +1,3 @@
-$("#update_header").click(() => {
-    $("header").text("New Header!!!");
+$('#update_header').click(() => {
+  $('header').text('New Header!!!');
 });
